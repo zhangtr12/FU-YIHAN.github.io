@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery — ASTRA | Space Photography</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@500;700&family=Barlow:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <header class="navbar">
+        <div class="wrap">
+            <a class="brand" href="index.html">✦ AST<span>RA</span></a>
+            <button class="nav-toggle" aria-label="Open menu" onclick="toggleNav()">☰</button>
+            <nav aria-label="Main navigation">
+                <ul class="nav-links" id="navLinks">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="timeline.html">Timeline</a></li>
+                    <li><a href="missions.html">Missions</a></li>
+                    <li><a href="chat.html">Space Chat</a></li>
+                    <li><a class="active" href="gallery.html">Gallery</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section style="padding-top: calc(var(--nav-h) + 60px);">
+        <div class="wrap">
+            <div class="section-head">
+                <p class="eyebrow reveal">A window on the cosmos</p>
+                <h2 class="reveal d1">Gallery</h2>
+                <p class="reveal d2">Click any image to view it full size. </p>
+            </div>
+
+            <!-- ===== GALLERY =====
+                 Each tile: set data-img to your image path and data-caption to a description.
+                 Leave data-img empty to show a placeholder. Add or remove tiles freely. -->
+            <div class="gallery" id="gallery">
+                <div class="gallery-item" data-img="images/Earthrise over the Moon.jpg" data-caption="Earthrise over the Moon(Image credit: NASA)"></div>
+                <div class="gallery-item" data-img="images/The surface of Mars.jpg" data-caption="The surface of Mars(Image credit: NASA)"></div>
+                <div class="gallery-item" data-img="images/A spiral galaxy.jpg" data-caption="A spiral galaxy(Image credit: NASA)"></div>
+                <div class="gallery-item" data-img="images/Astronaut on a spacewalk.jpg" data-caption="Astronaut on a spacewalk(Image credit: SpaceX)"></div>
+                <div class="gallery-item" data-img="images/A rocket launch at dawn.jpg" data-caption="A rocket launch at dawn(Image credit: SpaceX)"></div>
+                <div class="gallery-item" data-img="images/The Pillars of Creation.jpg" data-caption="The Pillars of Creation(Image credit: NASA)"></div>
+                <div class="gallery-item" data-img="images/The International Space Station.jpg" data-caption="The International Space Station(Image credit: NASA)"></div>
+                <div class="gallery-item" data-img="images/Saturn and its rings.jpg" data-caption="Saturn and its rings(Image credit: NASA)"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Lightbox -->
+    <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Image viewer">
+        <button class="lb-close" aria-label="Close" onclick="closeLB()">×</button>
+        <button class="lb-btn lb-prev" aria-label="Previous" onclick="stepLB(-1)">‹</button>
+        <button class="lb-btn lb-next" aria-label="Next" onclick="stepLB(1)">›</button>
+        <div class="lightbox-inner">
+            <div class="lightbox-media" id="lbMedia"></div>
+            <p class="lightbox-cap" id="lbCap"></p>
+        </div>
+    </div>
+
+    <footer class="site-footer">
+        <div class="wrap footer-grid">
+            <div><h4>✦ ASTRA</h4><p class="credits">The history &amp; future of space exploration. A student project for CMNS2016.</p></div>
+            <div><h4>Navigate</h4>
+                <ul class="footer-links">
+                    <li><a href="index.html">Home</a></li><li><a href="timeline.html">Timeline</a></li>
+                    <li><a href="missions.html">Missions</a></li><li><a href="chat.html">Space Chat</a></li>
+                    <li><a href="gallery.html">Gallery</a></li>
+                </ul>
+            </div>
+<!--            <div><h4>Credits &amp; References</h4>-->
+<!--                <ul class="credits">-->
+<!--                    <li>Website template &amp; interactivity code: AI-assisted (cite as required).</li>-->
+<!--                    <li>Imagery: NASA public-domain library / created by author (credit each image).</li>-->
+<!--                </ul>-->
+<!--            </div>-->
+        </div>
+        <p class="footer-bottom">© 2025 ASTRA — Created by [FU YIHAN] · Student No. [c3546065]</p>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+    /* ===== Build the gallery tiles + lightbox ===== */
+    const tiles = Array.from(document.querySelectorAll('.gallery-item'));
+
+    function tileInner(t) {
+        const img = t.getAttribute('data-img');
+        const cap = t.getAttribute('data-caption') || '';
+        if (img) {
+            return '<img src="' + img + '" alt="' + cap + '"><div class="cap">' + cap + '</div>';
+        }
+        return '<div class="placeholder"><span class="ph-icon">🖼️</span>' +
+               '<span style="font-size:.8rem">' + cap + '</span>' +
+               '<span class="ph-file">add image</span></div>';
+    }
+
+    tiles.forEach((t, i) => {
+        t.innerHTML = tileInner(t);
+        t.addEventListener('click', () => openLB(i));
+    });
+
+    // Lightbox
+    const lb = document.getElementById('lightbox');
+    const lbMedia = document.getElementById('lbMedia');
+    const lbCap = document.getElementById('lbCap');
+    let current = 0;
+
+    function renderLB() {
+        const t = tiles[current];
+        const img = t.getAttribute('data-img');
+        const cap = t.getAttribute('data-caption') || '';
+        lbMedia.innerHTML = img
+            ? '<img src="' + img + '" alt="' + cap + '">'
+            : '<div class="placeholder"><span class="ph-icon">🖼️</span><span class="ph-file">add image</span></div>';
+        lbCap.textContent = cap;
+    }
+    function openLB(i) { current = i; renderLB(); lb.classList.add('open'); }
+    function closeLB() { lb.classList.remove('open'); }
+    function stepLB(d) { current = (current + d + tiles.length) % tiles.length; renderLB(); }
+
+    lb.addEventListener('click', e => { if (e.target === lb) closeLB(); });
+    document.addEventListener('keydown', e => {
+        if (!lb.classList.contains('open')) return;
+        if (e.key === 'Escape') closeLB();
+        if (e.key === 'ArrowLeft') stepLB(-1);
+        if (e.key === 'ArrowRight') stepLB(1);
+    });
+    </script>
+</body>
+</html>

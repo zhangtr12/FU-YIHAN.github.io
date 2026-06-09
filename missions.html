@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Missions — ASTRA | Key Missions in Spaceflight</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@500;700&family=Barlow:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <header class="navbar">
+        <div class="wrap">
+            <a class="brand" href="index.html">✦ AST<span>RA</span></a>
+            <button class="nav-toggle" aria-label="Open menu" onclick="toggleNav()">☰</button>
+            <nav aria-label="Main navigation">
+                <ul class="nav-links" id="navLinks">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="timeline.html">Timeline</a></li>
+                    <li><a class="active" href="missions.html">Missions</a></li>
+                    <li><a href="chat.html">Space Chat</a></li>
+                    <li><a href="gallery.html">Gallery</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section style="padding-top: calc(var(--nav-h) + 60px);">
+        <div class="wrap">
+            <div class="section-head">
+                <p class="eyebrow reveal">The missions that mattered</p>
+                <h2 class="reveal d1">Key Missions</h2>
+                <p class="reveal d2">A closer look at the spacecraft and crews that pushed the boundary of what's possible.</p>
+            </div>
+
+            <!-- ===== FEATURED VIDEO EMBED =====
+                 Paste the VIDEO ID of your "key space missions" video below.
+                 (Same rule: use the ID, not the whole link; set video to Unlisted.) -->
+<!--            <div class="embed-16x9" style="margin-bottom:40px;">-->
+<!--                <iframe title="Key space missions video"-->
+<!--                        src="https://www.youtube.com/embed/PASTE_MISSIONS_VIDEO_ID?rel=0&modestbranding=1"-->
+<!--                        allow="accelerometer; autoplay; encrypted-media; picture-in-picture" allowfullscreen></iframe>-->
+<!--            </div>-->
+
+            <!-- ===== MISSION CARDS =====
+                 EDIT the text. Add an image by replacing the .placeholder div with:
+                 <img src="images/your-photo.jpg" alt="description"> -->
+            <div class="grid grid-3">
+                <article class="card">
+                    <div class="card-media"><img src="images/apollo11.jpg" ></div>
+                    <div class="card-body">
+                        <span class="tag">1969 · NASA</span>
+                        <h3>Apollo 11</h3>
+                        <p>The first crewed Moon landing — and the first human footprints on another world(Image credit: NASA).</p>
+                    </div>
+                </article>
+
+                <article class="card">
+                    <div class="card-media"><img src="images/perseverance.jpg" ></div>
+                    <div class="card-body">
+                        <span class="tag">2021 · NASA</span>
+                        <h3>Mars Perseverance</h3>
+                        <p>Hunting for signs of ancient life and flying the first helicopter on another planet(Image credit: NASA).</p>
+                    </div>
+                </article>
+
+                <article class="card">
+                    <div class="card-media"><img src="images/iss.jpg" ></div>
+                    <div class="card-body">
+                        <span class="tag">1998 · International</span>
+                        <h3>The ISS</h3>
+                        <p>A laboratory the size of a football field, orbiting Earth roughly every 90 minutes(Image credit: NASA).</p>
+                    </div>
+                </article>
+
+                <article class="card">
+                    <div class="card-media"><img src="images/dragon.jpg" ></div>
+                    <div class="card-body">
+                        <span class="tag">2020 · SpaceX</span>
+                        <h3>Crew Dragon</h3>
+                        <p>The first crewed orbital flight by a commercial spacecraft — a new era of access to space(Image credit: NASA).</p>
+                    </div>
+                </article>
+
+                <article class="card">
+                    <div class="card-media"><img src="images/voyager.jpg" ></div>
+                    <div class="card-body">
+                        <span class="tag">1977 · NASA</span>
+                        <h3>Voyager</h3>
+                        <p>Twin probes that toured the outer planets and are now in interstellar space(Image credit: NASA).</p>
+                    </div>
+                </article>
+
+                <article class="card">
+                    <div class="card-media"><img src="images/Artemis II.jpg" ></div>
+                    <div class="card-body">
+                        <span class="tag">2026 · NASA</span>
+                        <h3>Artemis II</h3>
+                        <p>The first crewed Artemis fli ht marks a key step toward long‑term return to the Moon and future missions to Mars(Image credit: NASA).</p>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <footer class="site-footer">
+        <div class="wrap footer-grid">
+            <div><h4>✦ ASTRA</h4><p class="credits">The history &amp; future of space exploration. A student project for CMNS2016(Image credit: NASA).</p></div>
+            <div><h4>Navigate</h4>
+                <ul class="footer-links">
+                    <li><a href="index.html">Home</a></li><li><a href="timeline.html">Timeline</a></li>
+                    <li><a href="missions.html">Missions</a></li><li><a href="chat.html">Space Chat</a></li>
+                    <li><a href="gallery.html">Gallery</a></li>
+                </ul>
+            </div>
+            <div><h4>Credits &amp; References</h4>
+                <ul class="credits">
+                    <li>Website template &amp; interactivity code: AI-assisted (cite as required).</li>
+                    <li>Imagery: NASA public-domain library / created by author.</li>
+                    <li>Video: created by author.</li>
+                </ul>
+            </div>
+        </div>
+        <p class="footer-bottom">© 2025 ASTRA — Created by [FU YIHAN] · Student No. [c3546065]</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

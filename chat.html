@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Space Chat — ASTRA | Ask the Space Guide</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@500;700&family=Barlow:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <header class="navbar">
+        <div class="wrap">
+            <a class="brand" href="index.html">✦ AST<span>RA</span></a>
+            <button class="nav-toggle" aria-label="Open menu" onclick="toggleNav()">☰</button>
+            <nav aria-label="Main navigation">
+                <ul class="nav-links" id="navLinks">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="timeline.html">Timeline</a></li>
+                    <li><a href="missions.html">Missions</a></li>
+                    <li><a class="active" href="chat.html">Space Chat</a></li>
+                    <li><a href="gallery.html">Gallery</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section style="padding-top: calc(var(--nav-h) + 60px);">
+        <div class="wrap">
+            <div class="section-head" style="text-align:center;">
+                <p class="eyebrow reveal">Talk to ASTRA</p>
+                <h2 class="reveal d1">Ask the Space Guide</h2>
+                <p class="reveal d2" style="margin:12px auto 0;">Ask about the Moon landings, Mars, the ISS and more. Try: "Tell me about Apollo 11".</p>
+            </div>
+
+            <div class="chat-box">
+                <div class="chat-head">
+                    <div class="chat-avatar">🛰️</div>
+                    <div><h3>ASTRA Guide</h3><small>● online</small></div>
+                </div>
+                <div class="chat-log" id="chatLog" aria-live="polite"></div>
+                <div class="chat-input">
+                    <label for="chatInput" class="hidden">Type your message</label>
+                    <input id="chatInput" type="text" placeholder="Ask me about space…" autocomplete="off"
+                           onkeydown="if(event.key==='Enter'){sendMsg();}">
+                    <button onclick="sendMsg()">Send</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="site-footer">
+        <div class="wrap footer-grid">
+            <div><h4>✦ ASTRA</h4><p class="credits">The history &amp; future of space exploration. A student project for CMNS2016.</p></div>
+            <div><h4>Navigate</h4>
+                <ul class="footer-links">
+                    <li><a href="index.html">Home</a></li><li><a href="timeline.html">Timeline</a></li>
+                    <li><a href="missions.html">Missions</a></li><li><a href="chat.html">Space Chat</a></li>
+                    <li><a href="gallery.html">Gallery</a></li>
+                </ul>
+            </div>
+<!--            <div><h4>Credits &amp; References</h4>-->
+<!--                <ul class="credits">-->
+<!--                    <li>Website template &amp; interactivity code: AI-assisted (cite as required).</li>-->
+<!--                    <li>Chatbot content: written by author (Assignment 2).</li>-->
+<!--                </ul>-->
+<!--            </div>-->
+        </div>
+        <p class="footer-bottom">© 2025 ASTRA — Created by [FU YIHAN] · Student No. [c3546065]</p>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+    /* ===================================================================
+       SIMPLE RULE-BASED CHATBOT
+       This works out of the box. To use YOUR Assignment 2 content, just
+       edit the KNOWLEDGE list below: each entry has trigger keywords and
+       the answer the bot replies with. Add as many as you like.
+    =================================================================== */
+    const KNOWLEDGE = [
+        { keywords: ["hello","hi","hey"],
+          answer: "Hi! I'm ASTRA, your space guide. Ask me about the Moon landings, Mars, the ISS, or the future of spaceflight." },
+
+        { keywords: ["apollo","moon","11","armstrong"],
+          answer: "Apollo 11 (1969) was the first crewed Moon landing. Neil Armstrong and Buzz Aldrin walked on the surface while Michael Collins orbited above." },
+
+        { keywords: ["mars","rover","perseverance","curiosity","red planet"],
+          answer: "Mars has been visited by several rovers — Curiosity (2012) and Perseverance (2021) are still exploring today, searching for signs of past life." },
+
+        { keywords: ["iss","station","space station"],
+          answer: "The International Space Station orbits Earth about every 90 minutes and has been continuously crewed since the year 2000." },
+
+        { keywords: ["spacex","falcon","dragon","starship","musk"],
+          answer: "SpaceX builds reusable rockets. In 2020 its Crew Dragon became the first commercial spacecraft to carry astronauts to orbit." },
+
+        { keywords: ["future","colonize","colony","mars base"],
+          answer: "The next big goals are returning humans to the Moon for longer stays and, eventually, sending the first crews to Mars." },
+
+        { keywords: ["thanks","thank you","bye"],
+          answer: "Anytime! Safe travels, commander. 🚀" }
+        /* 👉 ADD YOUR OWN Q&A ENTRIES HERE */
+    ];
+
+    const FALLBACK = "I'm still learning about that one! Try asking about Apollo 11, Mars rovers, the ISS, SpaceX, or the future of space travel.";
+
+    const log = document.getElementById('chatLog');
+    const input = document.getElementById('chatInput');
+
+    function addMsg(text, who) {
+        const div = document.createElement('div');
+        div.className = 'msg ' + who;
+        div.textContent = text;
+        log.appendChild(div);
+        log.scrollTop = log.scrollHeight;
+    }
+
+    function getReply(text) {
+        const q = text.toLowerCase();
+        for (const item of KNOWLEDGE) {
+            if (item.keywords.some(k => q.includes(k))) return item.answer;
+        }
+        return FALLBACK;
+    }
+
+    function sendMsg() {
+        const text = input.value.trim();
+        if (!text) return;
+        addMsg(text, 'user');
+        input.value = '';
+        // small delay so it feels like the bot is replying
+        setTimeout(() => addMsg(getReply(text), 'bot'), 450);
+    }
+
+    // Greeting on load
+    addMsg("Hi! I'm ASTRA, your space guide. Ask me anything about space exploration.", 'bot');
+    </script>
+</body>
+</html>

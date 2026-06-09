@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Timeline — ASTRA | Milestones of Space Exploration</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@500;700&family=Barlow:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <header class="navbar">
+        <div class="wrap">
+            <a class="brand" href="index.html">✦ AST<span>RA</span></a>
+            <button class="nav-toggle" aria-label="Open menu" onclick="toggleNav()">☰</button>
+            <nav aria-label="Main navigation">
+                <ul class="nav-links" id="navLinks">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a class="active" href="timeline.html">Timeline</a></li>
+                    <li><a href="missions.html">Missions</a></li>
+                    <li><a href="chat.html">Space Chat</a></li>
+                    <li><a href="gallery.html">Gallery</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section style="padding-top: calc(var(--nav-h) + 60px);">
+        <div class="wrap">
+            <div class="section-head">
+                <p class="eyebrow reveal">Six decades of firsts</p>
+                <h2 class="reveal d1">A Timeline of Space Exploration</h2>
+                <p class="reveal d2">Scroll to travel through the milestones that took us from the edge of the atmosphere to the surface of other worlds(Image credit: NASA). <em>(Verify dates and add your own entries / images.)</em></p>
+            </div>
+
+                <div class="timeline">
+                <!-- 1957: Sputnik 1 -->
+                <div class="tl-item">
+                    <div class="tl-year">1957</div>
+                    <h3>Sputnik 1 — the Space Age begins</h3>
+                    <p>The Soviet Union launches the first artificial satellite, opening the space race(Image credit: NASA).</p>
+                    <div class="tl-media">
+                        <img src="images/sputnik.jpg" alt="Soviet Union's Sputnik 1 launch">
+                    </div>
+                </div>
+
+                <!-- 1961: Yuri Gagarin -->
+                <div class="tl-item">
+                    <div class="tl-year">1961</div>
+                    <h3>First human in space</h3>
+                    <p>Yuri Gagarin orbits the Earth aboard Vostok 1 — the first person to leave the planet(Image credit: NASA).</p>
+                    <div class="tl-media">
+                        <img src="images/gagarin.jpg" alt="Yuri Gagarin, first human in space(Image credit: NASA)">
+                    </div>
+                </div>
+
+                <!-- 1969: Apollo 11 -->
+                <div class="tl-item">
+                    <div class="tl-year">1969</div>
+                    <h3>Apollo 11 — boots on the Moon</h3>
+                    <p>Neil Armstrong and Buzz Aldrin become the first humans to walk on the lunar surface(Image credit: NASA).</p>
+                    <div class="tl-media">
+                        <img src="images/apollo11.jpg" alt="Neil Armstrong on the Moon(Image credit: NASA)">
+                    </div>
+                </div>
+
+                <!-- 1998: ISS -->
+                <div class="tl-item">
+                    <div class="tl-year">1998</div>
+                    <h3>International Space Station</h3>
+                    <p>Construction of humanity's orbiting laboratory begins; it has been continuously inhabited since 2000(Image credit: NASA).</p>
+                    <div class="tl-media">
+                        <img src="images/iss.jpg" alt="International Space Station(Image credit: NASA)">
+                    </div>
+                </div>
+
+                <!-- 2012: Curiosity -->
+                <div class="tl-item">
+                    <div class="tl-year">2012</div>
+                    <h3>Curiosity lands on Mars</h3>
+                    <p>NASA's car-sized rover touches down in Gale Crater to study the planet's habitability(Image credit: NASA).</p>
+                    <div class="tl-media">
+                        <img src="images/curiosity.jpg" alt="Mars Curiosity Rover(Image credit: NASA)">
+                    </div>
+                </div>
+
+                <!-- 2021: Perseverance -->
+                <div class="tl-item">
+                    <div class="tl-year">2021</div>
+                    <h3>Perseverance & Ingenuity</h3>
+                    <p>A new rover lands on Mars carrying Ingenuity — the first aircraft to fly on another planet(Image credit: NASA).</p>
+                    <div class="tl-media">
+                        <img src="images/perseverance.jpg" alt="Mars Perseverance Rover and Ingenuity helicopter(Image credit: NASA)">
+                    </div>
+                </div>
+
+                <!-- Future -->
+                <div class="tl-item">
+                    <div class="tl-year">Future</div>
+                    <h3>Return to the Moon — and on to Mars</h3>
+                    <p>Crewed programmes aim to establish a sustained presence on the Moon and send the first humans to Mars(Image credit: NASA).</p>
+                    <div class="tl-media">
+                        <img src="images/future-mars.jpg" alt="Artist impression of future Mars colony(Image credit: NASA)">
+                    </div>
+                </div>
+
+            </div>
+
+<!--            <div class="timeline">-->
+
+<!--                <div class="tl-item">-->
+
+<!--                    <div class="tl-year">1957</div>-->
+<!--                    <h3>Sputnik 1 — the Space Age begins</h3>-->
+<!--                    <p>The Soviet Union launches the first artificial satellite, opening the space race.</p>-->
+<!--                    <div class="tl-media"><img src="images/sputnik.jpg" alt="Soviet Union's Sputnik 1 launch"><span class="ph-icon">🛰️</span><span class="ph-file">images/sputnik.jpg</span></div></div>-->
+<!--                </div>-->
+
+<!--                <div class="tl-item">-->
+<!--                    <div class="tl-year">1961</div>-->
+<!--                    <h3>First human in space</h3>-->
+<!--                    <p>Yuri Gagarin orbits the Earth aboard Vostok 1 — the first person to leave the planet.</p>-->
+<!--                    <div class="tl-media"><div class="placeholder"><span class="ph-icon">🚀</span><span class="ph-file">images/gagarin.jpg</span></div></div>-->
+<!--                </div>-->
+
+<!--                <div class="tl-item">-->
+<!--                    <div class="tl-year">1969</div>-->
+<!--                    <h3>Apollo 11 — boots on the Moon</h3>-->
+<!--                    <p>Neil Armstrong and Buzz Aldrin become the first humans to walk on the lunar surface.</p>-->
+<!--                    <div class="tl-media"><div class="placeholder"><span class="ph-icon">🌕</span><span class="ph-file">images/apollo11.jpg</span></div></div>-->
+<!--                </div>-->
+
+<!--                <div class="tl-item">-->
+<!--                    <div class="tl-year">1998</div>-->
+<!--                    <h3>International Space Station</h3>-->
+<!--                    <p>Construction of humanity's orbiting laboratory begins; it has been continuously inhabited since 2000.</p>-->
+<!--                    <div class="tl-media"><div class="placeholder"><span class="ph-icon">🛰️</span><span class="ph-file">images/iss.jpg</span></div></div>-->
+<!--                </div>-->
+
+<!--                <div class="tl-item">-->
+<!--                    <div class="tl-year">2012</div>-->
+<!--                    <h3>Curiosity lands on Mars</h3>-->
+<!--                    <p>NASA's car-sized rover touches down in Gale Crater to study the planet's habitability.</p>-->
+<!--                    <div class="tl-media"><div class="placeholder"><span class="ph-icon">🔴</span><span class="ph-file">images/curiosity.jpg</span></div></div>-->
+<!--                </div>-->
+
+<!--                <div class="tl-item">-->
+<!--                    <div class="tl-year">2021</div>-->
+<!--                    <h3>Perseverance &amp; Ingenuity</h3>-->
+<!--                    <p>A new rover lands on Mars carrying Ingenuity — the first aircraft to fly on another planet.</p>-->
+<!--                    <div class="tl-media"><div class="placeholder"><span class="ph-icon">🚁</span><span class="ph-file">images/perseverance.jpg</span></div></div>-->
+<!--                </div>-->
+
+<!--                <div class="tl-item">-->
+<!--                    <div class="tl-year">Future</div>-->
+<!--                    <h3>Return to the Moon — and on to Mars</h3>-->
+<!--                    <p>Crewed programmes aim to establish a sustained presence on the Moon and send the first humans to Mars. <em>(Add your own future-vision entry.)</em></p>-->
+<!--                    <div class="tl-media"><div class="placeholder"><span class="ph-icon">🪐</span><span class="ph-file">images/future-mars.jpg</span></div></div>-->
+<!--                </div>-->
+
+<!--            </div>-->
+        </div>
+    </section>
+
+    <footer class="site-footer">
+        <div class="wrap footer-grid">
+            <div><h4>✦ ASTRA</h4><p class="credits">The history &amp; future of space exploration. A student project for CMNS2016.</p></div>
+            <div><h4>Navigate</h4>
+                <ul class="footer-links">
+                    <li><a href="index.html">Home</a></li><li><a href="timeline.html">Timeline</a></li>
+                    <li><a href="missions.html">Missions</a></li><li><a href="chat.html">Space Chat</a></li>
+                    <li><a href="gallery.html">Gallery</a></li>
+                </ul>
+            </div>
+<!--            <div><h4>Credits &amp; References</h4>-->
+<!--                <ul class="credits">-->
+<!--                    <li>Website template &amp; interactivity code: AI-assisted (cite as required).</li>-->
+<!--                    <li>Imagery: NASA public-domain library / created by author.</li>-->
+<!--                    <li>Fonts: Chakra Petch &amp; Barlow (Google Fonts, OFL).</li>-->
+<!--                </ul>-->
+<!--            </div>-->
+        </div>
+        <p class="footer-bottom">© 2025 ASTRA — Created by [FU YIHAN] · Student No. [c3546065]</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
