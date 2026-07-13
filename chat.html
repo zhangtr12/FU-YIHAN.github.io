@@ -61,14 +61,14 @@
                     <li><a href="gallery.html">Gallery</a></li>
                 </ul>
             </div>
-<!--            <div><h4>Credits &amp; References</h4>-->
-<!--                <ul class="credits">-->
-<!--                    <li>Website template &amp; interactivity code: AI-assisted (cite as required).</li>-->
-<!--                    <li>Chatbot content: written by author (Assignment 2).</li>-->
-<!--                </ul>-->
-<!--            </div>-->
+            <div><h4>Credits &amp; References</h4>
+                <ul class="credits">
+                    <li>Website template &amp; interactivity code: AI-assisted (cite as required).</li>
+                    <li>Chatbot content: written by author (Assignment 2).</li>
+                </ul>
+            </div>
         </div>
-        <p class="footer-bottom">© 2025 ASTRA — Created by [FU YIHAN] · Student No. [c3546065]</p>
+        <p class="footer-bottom">© 2025 ASTRA — Created by [Your Name] · Student No. [xxxxxxx]</p>
     </footer>
 
     <script src="script.js"></script>
@@ -81,7 +81,7 @@
     =================================================================== */
     const KNOWLEDGE = [
         { keywords: ["hello","hi","hey"],
-          answer: "Hi! I'm ASTRA, your space guide. Ask me about the Moon landings, Mars, the ISS, or the future of spaceflight." },
+          answer: "Hi! I'm ASTRA, your space guide. Ask me about the Moon landings, Mars, the ISS, the planets, telescopes, black holes, or the future of spaceflight." },
 
         { keywords: ["apollo","moon","11","armstrong"],
           answer: "Apollo 11 (1969) was the first crewed Moon landing. Neil Armstrong and Buzz Aldrin walked on the surface while Michael Collins orbited above." },
@@ -98,9 +98,62 @@
         { keywords: ["future","colonize","colony","mars base"],
           answer: "The next big goals are returning humans to the Moon for longer stays and, eventually, sending the first crews to Mars." },
 
+        { keywords: ["artemis"],
+          answer: "NASA's Artemis program aims to return astronauts to the Moon, including the first woman to walk there, and to build a lasting presence as a stepping stone to Mars." },
+
+        { keywords: ["hubble"],
+          answer: "The Hubble Space Telescope, launched in 1990, orbits above Earth's atmosphere and has captured some of the sharpest images of distant galaxies and nebulae ever taken." },
+
+        { keywords: ["webb","jwst","james webb"],
+          answer: "The James Webb Space Telescope, launched in 2021, is the most powerful space telescope ever built. It sees in infrared, letting it study the earliest galaxies and distant planets." },
+
+        { keywords: ["black hole","black holes","event horizon"],
+          answer: "A black hole is a region where gravity is so strong that not even light can escape. They form when massive stars collapse, and the first image of one was released in 2019." },
+
+        { keywords: ["sun","sunlight"],
+          answer: "The Sun is the star at the centre of our solar system — a giant ball of hot plasma whose gravity holds the planets in orbit and whose light makes life on Earth possible." },
+
+        { keywords: ["solar system","planets","how many planets"],
+          answer: "Our solar system has eight planets orbiting the Sun: Mercury, Venus, Earth, Mars, Jupiter, Saturn, Uranus and Neptune, plus moons, asteroids and comets." },
+
+        { keywords: ["saturn","rings"],
+          answer: "Saturn is famous for its spectacular rings, made mostly of ice and rock. It's the second-largest planet and has well over a hundred known moons." },
+
+        { keywords: ["jupiter","great red spot"],
+          answer: "Jupiter is the largest planet in the solar system — a giant ball of gas with a storm called the Great Red Spot that has raged for centuries." },
+
+        { keywords: ["galaxy","galaxies","milky way"],
+          answer: "A galaxy is a huge collection of stars, gas and dust held together by gravity. Our own galaxy, the Milky Way, contains hundreds of billions of stars." },
+
+        { keywords: ["astronaut","spacewalk","eva"],
+          answer: "Astronauts train for years before flying. A spacewalk, or EVA, is when an astronaut leaves the spacecraft in a pressurised suit to work outside in the vacuum of space." },
+
+        { keywords: ["rocket","thrust","how do rockets"],
+          answer: "Rockets work by burning fuel and pushing hot gas out at high speed. The gas goes one way and the rocket is pushed the other — that's Newton's third law of motion." },
+
+        { keywords: ["gravity","weightless","zero gravity","float"],
+          answer: "Astronauts float because they are in continuous free fall around Earth, not because gravity is absent. This is usually called microgravity or zero-g." },
+
+        { keywords: ["comet","asteroid","meteor"],
+          answer: "Asteroids are rocky leftovers from the early solar system, while comets are icy bodies that grow glowing tails as they near the Sun. A meteor is the streak of light when one burns up in our atmosphere." },
+
+        { keywords: ["big bang","universe","how old is the universe"],
+          answer: "Most scientists agree the universe began about 13.8 billion years ago in the Big Bang, and it has been expanding ever since." },
+
+        { keywords: ["light year","light-year","how far"],
+          answer: "A light-year is the distance light travels in one year — about 9.5 trillion kilometres. Even the nearest star beyond the Sun is over four light-years away." },
+
+        { keywords: ["satellite","gps","orbit"],
+          answer: "A satellite is any object that orbits a planet. Thousands circle Earth, powering things like GPS navigation, weather forecasts, TV and the internet." },
+
+        { keywords: ["alien","aliens","extraterrestrial","life on other planets"],
+          answer: "No alien life has been confirmed yet, but scientists search for it by studying places like Mars and the icy moons of Jupiter and Saturn, and by listening for signals from distant stars." },
+
+        { keywords: ["eclipse","solar eclipse","lunar eclipse"],
+          answer: "A solar eclipse happens when the Moon passes between the Earth and the Sun, briefly blocking its light. A lunar eclipse is when Earth's shadow falls across the Moon." },
+
         { keywords: ["thanks","thank you","bye"],
           answer: "Anytime! Safe travels, commander. 🚀" }
-        /* 👉 ADD YOUR OWN Q&A ENTRIES HERE */
     ];
 
     const FALLBACK = "I'm still learning about that one! Try asking about Apollo 11, Mars rovers, the ISS, SpaceX, or the future of space travel.";
