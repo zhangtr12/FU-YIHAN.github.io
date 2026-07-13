@@ -1,232 +1,235 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- Page Title is marked in the rubric — keep it meaningful on every page -->
-    <title>ASTRA — The History &amp; Future of Space Exploration</title>
-    <meta name="description" content="An interactive journey through the history and future of human spaceflight.">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@500;700&family=Barlow:wght@400;500;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
-</head>
-<body>
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!-- Page Title is marked in the rubric — keep it meaningful on every page -->
+        <title>ASTRA — The History &amp; Future of Space Exploration</title>
+        <meta name="description" content="An interactive journey through the history and future of human spaceflight.">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@500;700&family=Barlow:wght@400;500;600&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="styles.css">
+    </head>
+    <body>
 
-    <!-- ============================ NAV (same on every page) ============================ -->
-    <header class="navbar">
-        <div class="wrap">
-            <a class="brand" href="index.html">✦ AST<span>RA</span></a>
-            <button class="nav-toggle" aria-label="Open menu" onclick="toggleNav()">☰</button>
-            <nav aria-label="Main navigation">
-                <ul class="nav-links" id="navLinks">
-                    <li><a class="active" href="index.html">Home</a></li>
-                    <li><a href="timeline.html">Timeline</a></li>
-                    <li><a href="missions.html">Missions</a></li>
-                    <li><a href="chat.html">Space Chat</a></li>
-                    <li><a href="gallery.html">Gallery</a></li>
-                </ul>
-            </nav>
-        </div>
-    </header>
-
-    <!-- ================================ HERO ================================ -->
-    <section class="hero">
-        <!-- OPTIONAL background video (SpaceX style). Put a file in /videos and uncomment:
-        <video class="hero-video" autoplay muted loop playsinline>
-            <source src="videos/hero-loop.mp4" type="video/mp4">
-        </video> -->
-
-        <!-- Decorative: glowing planet with tilted orbits (pure CSS/SVG) -->
-        <div class="hero-art" aria-hidden="true">
-            <div class="orbit orbit-b"><span class="sat"></span></div>
-            <div class="orbit orbit-a"><span class="sat"></span></div>
-            <svg class="planet" viewBox="0 0 220 220" xmlns="http://www.w3.org/2000/svg">
-                <defs>
-                    <radialGradient id="planetGrad" cx="38%" cy="32%" r="78%">
-                        <stop offset="0%" stop-color="#ffe2bd"/>
-                        <stop offset="40%" stop-color="#ff8a2b"/>
-                        <stop offset="100%" stop-color="#5e2200"/>
-                    </radialGradient>
-                    <linearGradient id="terminator" x1="0" y1="0" x2="1" y2="1">
-                        <stop offset="55%" stop-color="rgba(0,0,0,0)"/>
-                        <stop offset="100%" stop-color="rgba(0,0,0,.55)"/>
-                    </linearGradient>
-                    <clipPath id="planetClip"><circle cx="110" cy="110" r="66"/></clipPath>
-                </defs>
-                <circle cx="110" cy="110" r="66" fill="url(#planetGrad)"/>
-                <g clip-path="url(#planetClip)" opacity=".5">
-                    <ellipse cx="110" cy="86"  rx="80" ry="9"  fill="rgba(120,50,0,.5)"/>
-                    <ellipse cx="110" cy="120" rx="80" ry="12" fill="rgba(255,210,160,.25)"/>
-                    <ellipse cx="110" cy="146" rx="80" ry="8"  fill="rgba(120,50,0,.45)"/>
-                </g>
-                <circle cx="110" cy="110" r="66" fill="url(#terminator)"/>
-            </svg>
-        </div>
-        <div class="hero-horizon" aria-hidden="true"></div>
-
-        <div class="wrap hero-inner">
-            <p class="eyebrow reveal">Mission Briefing</p>
-            <h1 class="reveal d1">The History &amp; <span class="accent">Future</span> of Space Exploration</h1>
-            <p class="reveal d2">From the first footprints on the Moon to the first city on Mars — explore the missions that defined us and the journeys still ahead.</p>
-            <div class="hero-cta reveal d3">
-                <a class="btn btn-primary" href="#experience">Start the experience</a>
-                <a class="btn btn-ghost" href="timeline.html">Explore the timeline</a>
+        <!-- ============================ NAV (same on every page) ============================ -->
+        <header class="navbar">
+            <div class="wrap">
+                <a class="brand" href="index.html">✦ AST<span>RA</span></a>
+                <button class="nav-toggle" aria-label="Open menu" onclick="toggleNav()">☰</button>
+                <nav aria-label="Main navigation">
+                    <ul class="nav-links" id="navLinks">
+                        <li><a class="active" href="index.html">Home</a></li>
+                        <li><a href="timeline.html">Timeline</a></li>
+                        <li><a href="missions.html">Missions</a></li>
+                        <li><a href="chat.html">Space Chat</a></li>
+                        <li><a href="gallery.html">Gallery</a></li>
+                    </ul>
+                </nav>
             </div>
-            <div class="telemetry reveal d3" aria-hidden="true">
-                <span class="rec">REC</span>
-                <span>LAT 19.43°N</span>
-                <span>LON 23.47°W</span>
-                <span>ALT 384,400 KM</span>
-                <span>SIG ●●●○</span>
-            </div>
-        </div>
-    </section>
+        </header>
 
-    <!-- =============================== INTRO =============================== -->
-    <section>
-        <div class="wrap">
-            <div class="section-head">
-                <p class="eyebrow">About this site</p>
-                <h2>One small click, one giant choice</h2>
-                <!-- EDIT: replace with your own intro paragraph -->
-                <p>ASTRA is an interactive archive of human spaceflight, built for the curious. Watch the briefing below, make a call as mission commander, and see how the story unfolds. Then dive into the timeline, missions, gallery, and chat with our space guide.</p>
-            </div>
-        </div>
-    </section>
+        <!-- ================================ HERO ================================ -->
+        <section class="hero">
+            <!-- OPTIONAL background video (SpaceX style). Put a file in /videos and uncomment:
+            <video class="hero-video" autoplay muted loop playsinline>
+                <source src="videos/hero-loop.mp4" type="video/mp4">
+            </video> -->
 
-    <!-- ===================== INTERACTIVE BRANCHING VIDEO ===================== -->
-    <!-- This is your Assignment 1 piece, embedded here. -->
-    <div class="divider" aria-hidden="true"><span class="dot">✦ ● ✦</span></div>
-    <section id="experience">
-        <div class="wrap">
-            <div class="section-head" style="text-align:center;">
-                <p class="eyebrow">Interactive Mission</p>
-                <h2>You are the commander</h2>
-                <p style="margin:12px auto 0;">Watch the briefing, then choose what the mission does next.</p>
+            <!-- Decorative: glowing planet with tilted orbits (pure CSS/SVG) -->
+            <div class="hero-art" aria-hidden="true">
+                <div class="orbit orbit-b"><span class="sat"></span></div>
+                <div class="orbit orbit-a"><span class="sat"></span></div>
+                <svg class="planet" viewBox="0 0 220 220" xmlns="http://www.w3.org/2000/svg">
+                    <defs>
+                        <radialGradient id="planetGrad" cx="38%" cy="32%" r="78%">
+                            <stop offset="0%" stop-color="#ffe2bd"/>
+                            <stop offset="40%" stop-color="#ff8a2b"/>
+                            <stop offset="100%" stop-color="#5e2200"/>
+                        </radialGradient>
+                        <linearGradient id="terminator" x1="0" y1="0" x2="1" y2="1">
+                            <stop offset="55%" stop-color="rgba(0,0,0,0)"/>
+                            <stop offset="100%" stop-color="rgba(0,0,0,.55)"/>
+                        </linearGradient>
+                        <clipPath id="planetClip"><circle cx="110" cy="110" r="66"/></clipPath>
+                    </defs>
+                    <circle cx="110" cy="110" r="66" fill="url(#planetGrad)"/>
+                    <g clip-path="url(#planetClip)" opacity=".5">
+                        <ellipse cx="110" cy="86"  rx="80" ry="9"  fill="rgba(120,50,0,.5)"/>
+                        <ellipse cx="110" cy="120" rx="80" ry="12" fill="rgba(255,210,160,.25)"/>
+                        <ellipse cx="110" cy="146" rx="80" ry="8"  fill="rgba(120,50,0,.45)"/>
+                    </g>
+                    <circle cx="110" cy="110" r="66" fill="url(#terminator)"/>
+                </svg>
             </div>
+            <div class="hero-horizon" aria-hidden="true"></div>
 
-            <div class="video-stage">
-                <!-- MAIN / SETUP video -->
-                <div id="mainSection">
-                    <div class="video-frame">
-                        <iframe id="mainVideo" title="Main story video"
-                                allow="autoplay; encrypted-media; picture-in-picture" allowfullscreen></iframe>
-                    </div>
-                    <!-- EDIT the button text to match the choice in your main video -->
-                    <div class="choice-buttons">
-                        <button class="choice-btn" onclick="showResult(1)">🪐 Land on Mars</button>
-                        <button class="choice-btn" onclick="showResult(2)">🛰️ Stay in orbit</button>
-                    </div>
+            <div class="wrap hero-inner">
+                <p class="eyebrow reveal">Mission Briefing</p>
+                <h1 class="reveal d1">The History &amp; <span class="accent">Future</span> of Space Exploration</h1>
+                <p class="reveal d2">From the first footprints on the Moon to the first city on Mars — explore the missions that defined us and the journeys still ahead.</p>
+                <div class="hero-cta reveal d3">
+                    <a class="btn btn-primary" href="#experience">Start the experience</a>
+                    <a class="btn btn-ghost" href="timeline.html">Explore the timeline</a>
                 </div>
-
-                <!-- RESULT A -->
-                <div id="result1Section" class="hidden">
-                    <div class="video-frame">
-                        <iframe id="result1Video" title="Choice A result video"
-                                allow="autoplay; encrypted-media; picture-in-picture" allowfullscreen></iframe>
-                    </div>
-                    <button class="back-btn" onclick="goBack()">← Back to start</button>
-                </div>
-
-                <!-- RESULT B -->
-                <div id="result2Section" class="hidden">
-                    <div class="video-frame">
-                        <iframe id="result2Video" title="Choice B result video"
-                                allow="autoplay; encrypted-media; picture-in-picture" allowfullscreen></iframe>
-                    </div>
-                    <button class="back-btn" onclick="goBack()">← Back to start</button>
-                </div>
-
-                <!-- Extra interactivity: like -->
-                <div class="like-row">
-                    <button id="likeBtn" class="like-btn">♥ Like this story</button>
-                    <span class="like-count">Likes: <span id="likeCount">0</span></span>
+                <div class="telemetry reveal d3" aria-hidden="true">
+                    <span class="rec">REC</span>
+                    <span>LAT 19.43°N</span>
+                    <span>LON 23.47°W</span>
+                    <span>ALT 384,400 KM</span>
+                    <span>SIG ●●●○</span>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- =============================== FOOTER (same on every page) =============================== -->
-    <footer class="site-footer">
-        <div class="wrap footer-grid">
-            <div>
-                <h4>✦ ASTRA</h4>
-                <p class="credits">The history &amp; future of space exploration. A student project for CMNS2016.</p>
+        <!-- =============================== INTRO =============================== -->
+        <section>
+            <div class="wrap">
+                <div class="section-head">
+                    <p class="eyebrow">About this site</p>
+                    <h2>One small click, one giant choice</h2>
+                    <!-- EDIT: replace with your own intro paragraph -->
+                    <p>ASTRA is an interactive archive of human spaceflight, built for the curious. Watch the briefing below, make a call as mission commander, and see how the story unfolds. Then dive into the timeline, missions, gallery, and chat with our space guide.</p>
+                </div>
             </div>
-            <div>
-                <h4>Navigate</h4>
-                <ul class="footer-links">
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="timeline.html">Timeline</a></li>
-                    <li><a href="missions.html">Missions</a></li>
-                    <li><a href="chat.html">Space Chat</a></li>
-                    <li><a href="gallery.html">Gallery</a></li>
-                </ul>
-            </div>
-            <div>
-                <h4>Credits &amp; References</h4>
-                <!-- IMPORTANT (assignment rule): list every sourced asset & code here -->
-                <ul class="credits">
-                    <li>Website template &amp; interactivity code: AI-assisted (cite as required).</li>
-                    <li>Imagery: NASA public-domain image library / created by author.</li>
-                    <li>Audio: [add Creative Commons source + link].</li>
-                    <li>Fonts: Chakra Petch &amp; Barlow (Google Fonts, OFL).</li>
-                </ul>
-            </div>
-        </div>
-        <p class="footer-bottom">© 2025 ASTRA — Created by [Your Name] · Student No. [xxxxxxx]</p>
-    </footer>
+        </section>
 
-    <script src="script.js"></script>
-    <script>
-    /* ===================================================================
-       ⬇⬇⬇  PASTE YOUR 3 YOUTUBE VIDEO IDs HERE  ⬇⬇⬇
-       From  https://youtu.be/AbCdEfGhIjK            -> ID is  AbCdEfGhIjK
-       From  https://www.youtube.com/watch?v=AbCdEfGhIjK -> ID is  AbCdEfGhIjK
-       (Set each video to "Unlisted" on YouTube — NOT Private.)
-    =================================================================== */
-    const VIDEO_IDS = {
-        main:    "PASTE_MAIN_VIDEO_ID_HERE",
-        option1: "PASTE_OPTION_A_VIDEO_ID_HERE",
-        option2: "PASTE_OPTION_B_VIDEO_ID_HERE"
-    };
-    /* =================================================================== */
+        <!-- ===================== INTERACTIVE BRANCHING VIDEO ===================== -->
+        <!-- This is your Assignment 1 piece, embedded here. -->
+        <div class="divider" aria-hidden="true"><span class="dot">✦ ● ✦</span></div>
+        <section id="experience">
+            <div class="wrap">
+                <div class="section-head" style="text-align:center;">
+                    <p class="eyebrow">Interactive Mission</p>
+                    <h2>You are the commander</h2>
+                    <p style="margin:12px auto 0;">Watch the briefing, then choose what the mission does next.</p>
+                </div>
 
-    function embedUrl(id, autoplay) {
-        return "https://www.youtube.com/embed/" + id +
-               "?rel=0&playsinline=1&modestbranding=1" + (autoplay ? "&autoplay=1" : "");
-    }
-    window.addEventListener("DOMContentLoaded", function () {
-        document.getElementById("mainVideo").src = embedUrl(VIDEO_IDS.main, false);
-    });
-    function showResult(n) {
-        document.getElementById("mainSection").classList.add("hidden");
-        if (n === 1) {
-            document.getElementById("result1Video").src = embedUrl(VIDEO_IDS.option1, true);
-            document.getElementById("result1Section").classList.remove("hidden");
-        } else {
-            document.getElementById("result2Video").src = embedUrl(VIDEO_IDS.option2, true);
-            document.getElementById("result2Section").classList.remove("hidden");
+                <div class="video-stage">
+                    <!-- MAIN / SETUP video -->
+                    <div id="mainSection">
+                        <div class="video-frame">
+                            <iframe id="mainVideo" title="Main story video"
+                                    allow="autoplay; encrypted-media; picture-in-picture" allowfullscreen></iframe>
+                        </div>
+                        <!-- EDIT the button text to match the choice in your main video -->
+                        <div class="choice-buttons">
+                            <button class="choice-btn" onclick="showResult(1)">🪐 Land on Mars</button>
+                            <button class="choice-btn" onclick="showResult(2)">🛰️ Stay in orbit</button>
+                        </div>
+                    </div>
+
+                    <!-- RESULT A -->
+                    <div id="result1Section" class="hidden">
+                        <div class="video-frame">
+                            <iframe id="result1Video" title="Choice A result video"
+                                    allow="autoplay; encrypted-media; picture-in-picture" allowfullscreen></iframe>
+                        </div>
+                        <button class="back-btn" onclick="goBack()">← Back to start</button>
+                    </div>
+
+                    <!-- RESULT B -->
+                    <div id="result2Section" class="hidden">
+                        <div class="video-frame">
+                            <iframe id="result2Video" title="Choice B result video"
+                                    allow="autoplay; encrypted-media; picture-in-picture" allowfullscreen></iframe>
+                        </div>
+                        <button class="back-btn" onclick="goBack()">← Back to start</button>
+                    </div>
+
+                    <!-- Extra interactivity: like -->
+                    <div class="like-row">
+                        <button id="likeBtn" class="like-btn">♥ Like this story</button>
+                        <span class="like-count">Likes: <span id="likeCount">0</span></span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- =============================== FOOTER (same on every page) =============================== -->
+        <footer class="site-footer">
+            <div class="wrap footer-grid">
+                <div>
+                    <h4>✦ ASTRA</h4>
+                    <p class="credits">The history &amp; future of space exploration. A student project for CMNS2016.</p>
+                </div>
+                <div>
+                    <h4>Navigate</h4>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="timeline.html">Timeline</a></li>
+                        <li><a href="missions.html">Missions</a></li>
+                        <li><a href="chat.html">Space Chat</a></li>
+                        <li><a href="gallery.html">Gallery</a></li>
+                    </ul>
+                </div>
+<!--                <div>-->
+<!--                    <h4>Credits &amp; References</h4>-->
+<!--                    &lt;!&ndash; IMPORTANT (assignment rule): list every sourced asset & code here &ndash;&gt;-->
+<!--                    <ul class="credits">-->
+<!--                        <li>Website template &amp; interactivity code: AI-assisted (cite as required).</li>-->
+<!--                        <li>Imagery: NASA public-domain image library / created by author.</li>-->
+<!--                        <li>Audio: [add Creative Commons source + link].</li>-->
+<!--                        <li>Fonts: Chakra Petch &amp; Barlow (Google Fonts, OFL).</li>-->
+<!--                    </ul>-->
+<!--                </div>-->
+            </div>
+            <p class="footer-bottom">© 2025 ASTRA — Created by [FU YIHAN] · Student No. [c3546065]</p>
+        </footer>
+
+        <script src="script.js"></script>
+        <script>
+        /* ===================================================================
+           ⬇⬇⬇  PASTE YOUR 3 YOUTUBE VIDEO IDs HERE  ⬇⬇⬇
+        =================================================================== */
+        const VIDEO_IDS = {
+            main:    "90NIp_aVh44",
+            option1: "RT8C6VeMnOM",
+            option2: "_5WI30lfzRE"
+        };
+        /* =================================================================== */
+
+        function embedUrl(id, autoplay) {
+            return "https://www.youtube.com/embed/" + id +
+                   "?rel=0&playsinline=1&modestbranding=1" + (autoplay ? "&autoplay=1" : "");
         }
-    }
-    function goBack() {
-        document.getElementById("result1Video").src = "";
-        document.getElementById("result2Video").src = "";
-        document.getElementById("result1Section").classList.add("hidden");
-        document.getElementById("result2Section").classList.add("hidden");
-        document.getElementById("mainSection").classList.remove("hidden");
-        document.getElementById("mainVideo").src = embedUrl(VIDEO_IDS.main, false);
-    }
-    // Like button
-    let likeCount = 0;
-    const likeBtn = document.getElementById("likeBtn");
-    likeBtn.addEventListener("click", function () {
-        likeCount++;
-        document.getElementById("likeCount").textContent = likeCount;
-        likeBtn.textContent = "Liked ✓";
-        likeBtn.style.background = "#1e7e34";
-    });
-    </script>
-</body>
-</html>
+
+        window.addEventListener("DOMContentLoaded", function () {
+            document.getElementById("mainVideo").src = embedUrl(VIDEO_IDS.main, false);
+        });
+
+        function showResult(n) {
+            document.getElementById("mainSection").classList.add("hidden");
+
+            if (n === 1) {
+                document.getElementById("result1Video").src = embedUrl(VIDEO_IDS.option1, true);
+                document.getElementById("result1Section").classList.remove("hidden");
+            } else {
+                document.getElementById("result2Video").src = embedUrl(VIDEO_IDS.option2, true);
+                document.getElementById("result2Section").classList.remove("hidden");
+            }
+        }
+
+        function goBack() {
+            document.getElementById("result1Video").src = "";
+            document.getElementById("result2Video").src = "";
+            document.getElementById("result1Section").classList.add("hidden");
+            document.getElementById("result2Section").classList.add("hidden");
+            document.getElementById("mainSection").classList.remove("hidden");
+            document.getElementById("mainVideo").src = embedUrl(VIDEO_IDS.main, false);
+        }
+
+        // Like button
+        let likeCount = 0;
+        const likeBtn = document.getElementById("likeBtn");
+
+        likeBtn.addEventListener("click", function () {
+            likeCount++;
+            document.getElementById("likeCount").textContent = likeCount;
+            likeBtn.textContent = "Liked ✓";
+            likeBtn.style.background = "#1e7e34";
+        });
+        </script>
+    </body>
+    </html>
